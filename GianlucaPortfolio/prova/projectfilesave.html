@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Giangi project farm</title>
+    <link href="css/project.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+
+
+    <!-- Original code by Mary Lou : https://tympanus.net/codrops/2014/05/22/inspiration-for-article-intro-effects/ -->
+<div class="demo">
+  <div id="container" class="container intro-effect-sidefixed">
+			<!-- Top Navigation -->
+			<div class="codrops-top clearfix">
+				<a href="https://SITO-ESAME.giangihack27.repl.co"><span>Go home</span></a></span>
+			</div>
+			
+    <header class="header">
+				<div class="bg-img"><img src="/html/immagini/progetto.jpeg" alt="" /></div>
+			</header>
+			
+      <button class="trigger"><span>Scroll or click to see the header effect</span></button>
+  
+			<article class="content">
+				<div class="title">
+					<h1>GIANGI'S SMART FARM</h1>
+					<p class="subline">Fattoria automonitorata</p>
+					<p>by <strong>Gianluca Fusco</strong> &#8212; Creata con <strong>Arduino</strong> on <strong>June 21, 2022</strong></p>
+				</div>
+				<div style="text-align:justify">
+					<p>PROJECT EXPLANATION: Il progetto è focalizzato sullo studio di particolari caratteristiche atmosferiche,  rilevabili mediante strumentazione apposita. Sfrutta il TINKERING, Tinkering è un termine inglese che vuol dire letteralmente “armeggiare, adoperarsi, darsi da fare”.E’ un tipo di apprendimento fondato su creatività e collaborazione.</p>
+
+					<h2>PROGETTAZIONE TECNICA</h2>
+					<p>Abbiamo utilizzato arduino blocks utilizzando il protocollo mqtt per inviare i dati raccolti dal nostro sensore DHT11 alla piattaforma web thingspeak. Thingspeak è una piattaforma open source per l’IoT che permette di raccogliere e archiviare dati inviati da vari dispositivi come Arduino, Raspberry Pi, BeagleBone Black, e altro hardware, su internet o su una rete locale. La potenza di Thingspeak è la disponibilità, parzialmente gratuita, di strumenti di analisi e visualizzazione dei dati grazie all’integrazione del software MATLAB. Per utilizzare Thingspeak occorre creare un account. La registrazione è gratuita. I dati vengono archiviati in canali che possono essere privati o pubblici. Ogni canale può contenere un massimo di otto serie di dati. Sono disponibili anche funzioni di importazione ed esportazione dei dati.</p>
+<p>Successivamente abbiamo effettuato il download del file con estensione .ino. Ottenendo il codice (valido per il microcontrollore NODE MCU) tale da poterlo successivamente modificare a seconda delle caratteristiche tecniche del nostro progetto.</p>
+<p>Il motivo per cui si è utilizzato il protocollo mqtt è semplice. MQTT è un termine che alla maggior parte di noi probabilmente non dice nulla. Ma se anziché parlare di MQTT, dicessimo HTTP, diverse lampadine si accenderebbero. Per dirla semplice semplice, MQTT è per l’IoT ciò che HTTP è per il web.
+
+MQTT è l’acronimo di Message Queuing Telemetry Transport e indica un protocollo di trasmissione dati TCP/IP basato su un modello di pubblicazione e sottoscrizione che opera attraverso un apposito message broker. In sostanza, i mittenti inviano messaggi relativi ad argomenti specifici, i destinatari si iscrivono ai temi che trovano interessanti e i broker provvedono alla trasmissione dei messaggi tra le due parti. MQTT è un protocollo di rete leggero e flessibile che garantisce il corretto equilibrio agli sviluppatori IoT:
+
+  <ul>
+    <li>La leggerezza del protocollo ne consente l’implementazione sia su dispositivi hardware fortemente vincolati, sia su reti ad elevata latenza o a larghezza di banda limitata in quanto risulta particolarmente resiliente in fase di comunicazione dei dati;</li>
+
+<li>La flessibilità del protocollo fa sì che possa supportare diversi scenari applicativi per dispositivi e servizi IoT;</li>
+
+<li>MQTT è un protocollo robusto, con una sua storia e una sua affidabilità. Insomma, non è un azzardo.</li>
+  </ul>
+
+A partire dal codice iniziale generato da arduino blocks abbiamo per prima cosa inserito le librerie per il microcontrollore Arduino Mkr Wifi 1010, in particolare abbiamo inserito al posto della libreria "ESP8266WiFi.h", utilizzata per arduino Node MCU, la libreria “WiFiNINA.h”. Fatto ciò abbiamo inserito il codice per consentire il funzionamento dei sensori collegati al nostro microcontrollore e poi inviati i valori acquisiti da ognuno di loro ai relativi canali creati sulla piattaforma thingspeak. I sensori utilizzati sono</p>
+					
+          <h3>IL CODICE</h3>
+					<p>Questo è il codice che permette alla fattoria di funzionare in piena autonomia</p>
+          <p>PREMI --> <a href="code.html">QUI</a></p>
+          <h1 style="text-align: center">SENSORI</h1>
+					<h3>DHT11 Sensor: Sensore Umidità e temperatura</h3>
+					<p>Il DHT11 è un sensore digitale di umidità e temperatura dell’aria costituito da una parte resistiva che si occupa della rilevazione dell’umidità e da un NTC che rileva la temperatura, queste due parti sono gestite da un microcontrollore che è parte integrante del sensore. Il DHT 11 viene pre-calibrato in fabbrica e i dati di calibrazione vengono memorizzati all’interno di una memoria di sola lettura (OPT Memory).</p>
+					<h3>Grove Dust Sensor: Sensore Particolato</h3>
+					<p>Il Grove Dust Sensor V1.3 è un sensore rilevatore di Materia Particolata; il sensore fornisce un segnale digitale in uscita (impulso a livello basso) proporzionale alla concentrazione di materia particolata rilevata.
+
+Il Grove Dust Sensor è in grado di rilevare particelle della dimensione di circa 1 micron e superiori; questo sensore può essere utilizzato, ad esempio, per rilevare particelle di polvere in una stanza incontaminata o per altre applicazioni meglio specificate qui di seguito:
+<ul>
+  <li>rilevamento della qualità dell'aria</li>
+  <li>rilevamento del grado di pulizia di un ambiente</li>
+  <li>rilevamento della presenza di fumo di sigaretta</li>
+</ul>
+</p>
+
+					<h3>TDS Sensor: Sensore Solidi Totali Disciolti</h3>
+					<p>Può essere applicato per misurare valore TDS dell'acqua, per riflettere la pulizia dell'acqua. TDS (solidi Totali Disciolti) indica che il numero di milligrammi di solidi solubili disciolto in un litro di acqua. In generale, più alto è il valore TDS e più alto è la presenza di solidi disciolti In acqua. Pertanto, il valore TDS può essere usato come uno dei riferimenti per riflettere la pulizia di acqua.Di misura il valore TDS in acqua è quello di misurare la quantità totale di varie sostanze organiche o sostanze inorganiche disciolto in acqua, in unità di ppm o milligrammi per litro (mg/l). La sua Elettrodo in grado di misurare materiali conduttivi, come ad esempio solidi sospesi, metalli pesanti e conduttivo ioni in acqua.</p>
+
+          <h3>Hygrometer Sensor: Sensore Umidità Terreno capacito con pompa sommergibile</h3>
+					<p>Questo sensore può essere utilizzato per rilevare l'umidità del suolo o verificare la presenza di acqua attorno al sensore, esso è di tipo capacitivo. Una volta inserito nel terreno questo sensore, l’uscita del sensore sarà a livello alto quando l'umidità è superiore al limite impostato, a livello basso in caso contrario; in tal caso un relè darà l’input ad una pompa sommergibile che irrigherà il terreno.</p>
+
+          <h3>Grove Water Sensor: Sensore Pioggia</h3>
+					<p>Il modulo Grove Water Sensor è uno dei sensori del sistema Grove ed è in grado di rilevare la presenza di acqua tramite la misurazione del livello di conduttività; il modulo opera con una tensione di 5V e presenta sulla sua superficie delle tracce interlacciate di segnali GND e segnali di rilevamento che sfruttano una resistenza di pull-up da 1MΩ. La resistenza porta il valore della traccia di rilevamento su un valore alto; quando una goccia di liquido collega questa traccia con quella GND, viene fornito un valore in uscita basso, rilevando così la presenza di acqua. Il modulo Grove Water Sensor è dotato di alta sensibilità e bassi consumi e trova il suo utilizzo in diverse applicazioni di tipo didattico, come ad esempio il rilevamento di pioggia, la ricerca di dispersione di liquido o il rilevamento del livello di liquido in un contenitore.</p>
+          <h3>MQ-2 Sensor: Sensore Gas e Fumo</h3>
+          <p>Il Modulo Sensore rilevatore di gas e fumo MQ-2 è in grado di rilevare la concentrazione nell'aria di gas infiammabili e fumo; il sensore MQ-2 è basato sull'utilizzo del diossido di stagno (SnO2), un materiale la cui bassa conduttività aumenta con la presenza di gas nell'aria. Questo sensore possiede un'elevata sensibilità a GPL, gas propano e idrogeno e può essere utilizzato anche per rilevare gas metano e butano.</p>
+
+					
+					<p><strong>MADE WITH PASSION BY GIANLUCA FUSCO</strong></p>
+				</div>
+			</article>
+		</div><!-- /container -->
+</div><!-- demo -->
+<div>
+<style>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script/project.js"></script>
+  </body>
+</html>

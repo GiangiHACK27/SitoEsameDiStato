@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Inglese di Giangi</title>
+
+    <link href="materiecss/inglese.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+
+    <head>
+    <title>Parallax Scrolling Website</title>
+</head>
+<body>
+    
+    <Section>
+        <h2 id="text"><span>It's time for a new</span><br>
+literature Adventure</h2>
+        
+        <img src="https://user-images.githubusercontent.com/65358991/170092504-132fa547-5ced-40e5-ab64-ded61518fac2.png" id="bird1">
+        <img src="https://user-images.githubusercontent.com/65358991/170092542-9747edcc-fb51-4e21-aaf5-a61119393618.png" id="bird2">
+        <img src="https://user-images.githubusercontent.com/65358991/170092559-883fe071-eb4f-4610-8c8b-a037d061c617.png" id="forest">
+        
+        <a href="#" id="btn">Explore</a>
+        
+        <img src="https://user-images.githubusercontent.com/65358991/170092605-eada6510-d556-45cc-b7fa-9e4d1d258d26.png" id="rocks">
+        <img src="https://user-images.githubusercontent.com/65358991/170092616-5a70c4af-2eed-496f-bde9-b5fcc7142a31.png" id="water">
+    </Section>
+    
+    <div class="sec" style="text-align:justify">
+        <h2 style="text-align:center">Virginia Woolf</h2>
+      <hr>
+        <p style="color:red">Intellectual background</p><p>virginia Woolf was born in London in 1882, third child by Sir Leslie Stephen - a renowned Victorian literary critic and philosopher. Virginia grew up with her brothers and brothers in law in a cultural context, she grew up and cultured at home where she could draw from a vast library in which she was also able to meet many writers.For virginia, paradise was represented by her parents' house in cornwall that will influence by inserting the maritime context in his works</p>
+<br>
+<p style="color:red">Early signs of mental instability</p><p>In Virginia Woolf's life there have been some interlinked episodes such as the death of her mother in 1895 after a period of depression that marked her for the rest of her life. Only after the death of her father in 1904, did she try to commit suicide with drugs for the first time. All these experiences lead to bouts of mental instability and bouts of depression.</p>
+<br>
+<p style="color:red">The move to Bloomsbury</p><p> After the death of his father, the family moved to the Bloomsbury residence where it also became the center of a group of writers and artists known as the Bloomsbury Group. The Bloomsbury disciples as they were termed were decidedly Anti-Victorians. They too were a very exclusive club, made up only of refined and highly educated men and women.</p>
+<br>
+<p style="color:red">Latter years</p><p> Her crises intensified until she totally collapsed with the Second World War with which she put an end to her story by throwing herself into the river with her pockets full of stones on March 28, 1941. Leaving her husband one of her last letters in which she thanked him for having it made happy</p>
+<br>
+<p style="color:red">A leading Modernist</p><p> Virginia Woolf's first novel, The Voyage Out, appeared in 1915. With which we have conventional plots, until her third novel Jacob's Room (1922) in which It describes the life of a young man, Jacob Flanders, and his death during the WWI. It was written using the "stream of consciousness" technique, with indirect narration and impressionistic poetic flow.</p>
+          <br>
+          <p style="color:red">Woolf’s use of time</p> <p>Most of Virginia Woolf’s works are set during a very short span of time , an example is Mrs dalloway because the events all happen in one day. This short periods of time are however are often expanded by the description of the character’s thoughts which can cover up to years in the past,present or future</p>
+          <br>
+          <p style="color:red">Femminist writing and critical works</p><p> Throughout her life Virginia Woolf was interested in problems concerning the role of women in society. As early as 1910 she was working as a volunteer in the movement of women’s suffrage and later she wrote some of her most inspired essays on the subject of female emancipation, A Room of One’s Own (1929) and Three Guineas (1938). Apart from her novels, Virginia Woolf wrote many short stories, critical essays – the most famous are collected in The Common Reader, published in 1925 and 1932 – biographies, and several volumes of notebooks forming her diary. Of great interest is her A Writer’s Diary (1915-41), which reads as a novel and collects her vivid memories of books and people
+</p>
+    </div>
+    
+    <footer>
+        <a href="https://sito-esame.giangihack27.repl.co/">Author Gianluca Fusco Click here to go home</a>
+    </footer>
+    
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let btn = document.getElementById('btn');
+        let rocks = document.getElementById('rocks');
+        let forest = document.getElementById('forest');
+        let water = document.getElementById('water');
+        let header = document.getElementById('header');
+        
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            
+            text.style.top = 50 + value * -.1 + '%';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * 2 + 'px';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * -5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            rocks.style.top = value * -.12 + 'px';
+            forest.style.top = value * .25 + 'px';
+            header.style.top = value * .5 + 'px';
+        })
+    </script>
+    
+</body>
+
+
+   
+       
+
+    
+    <script src="materiejs/inglese.js"></script>
+  </body>
+</html>
